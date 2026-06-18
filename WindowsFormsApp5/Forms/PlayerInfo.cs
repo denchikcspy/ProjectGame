@@ -10,7 +10,7 @@ namespace WindowsFormsApp5.Forms
         public PlayerInfo()
         {
             InitializeComponent();
-            player = new Player("Ростислав");
+            player = new Player("Денис");
             this.label2.Text = player.CurrentWeapon.getName();
             this.label1.Text = player.getName();
         }
@@ -18,6 +18,11 @@ namespace WindowsFormsApp5.Forms
         public void updateWeaponNameLabel()
         {
             this.label2.Text = player.CurrentWeapon.getName();
+        }
+
+        public void updateArmorNameLabel()
+        {
+            this.label3.Text = player.CurrentArmor.getName();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -30,6 +35,7 @@ namespace WindowsFormsApp5.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
+           
             Application.Exit();
         }
     }

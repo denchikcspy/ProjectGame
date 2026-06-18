@@ -20,7 +20,7 @@ namespace WindowsFormsApp5.Entities
         private int Intelligence = 20;
         private int CriticalChance = 0;
 
-        private int Money = 350;//Щоб купити хочаб щось у магазині
+        private int Money = 350; //Щоб купити хочаб щось у магазині
         public ProgressBarValueHelper MP;
 
 

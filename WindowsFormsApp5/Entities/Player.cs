@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsApp5.Entities.Items;
@@ -19,7 +20,7 @@ namespace WindowsFormsApp5.Entities
         private int Intelligence = 20;
         private int CriticalChance = 0;
 
-        private int Gold = 0;
+        private int Money = 350;//Щоб купити хочаб щось у магазині
         public ProgressBarValueHelper MP;
 
 
@@ -40,6 +41,34 @@ namespace WindowsFormsApp5.Entities
         {
             this.CurrentWeapon = newWeapon;
         }
+
+        public void setNewArmor(Armor armor)
+        {
+            this.CurrentArmor = armor;
+        }
+
+        public Armor getArmor()
+        {
+            return CurrentArmor;
+        }
+
+
+        public Weapon getWeapon()
+        {
+            return CurrentWeapon;
+        }
+
+
+        public int getMoney()
+        {
+            return Money;
+        }
+        public void setMoney(int money)
+        {
+            this.Money = money;
+        }
+
+
 
     }
 }

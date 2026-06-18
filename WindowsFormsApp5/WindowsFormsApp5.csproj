@@ -72,6 +72,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\WeaponGenerator.cs" />
+    <Compile Include="Services\ArmorGenerator.cs" />
     <Compile Include="Utils\CustomRandomizer.cs" />
     <Compile Include="Utils\ProgressBarValueHelper.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -108,9 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GameServices\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\backiee-358315.jpg" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

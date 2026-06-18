@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using WindowsFormsApp5.Entities;
 using WindowsFormsApp5.Entities.Items;
+using WindowsFormsApp5.Services;
+
 
 namespace WindowsFormsApp5.Forms
 {
@@ -9,13 +12,19 @@ namespace WindowsFormsApp5.Forms
     {
         private PlayerInfo prevForm;
         private Player player;
+        private List<Item> shopItems = new List<Item>();
+        private Random random = new Random();
         public Shop(string message, PlayerInfo previosForm, Player player)
         {
             InitializeComponent();
+            GenerateShop();
             this.label2.Text = message;
             this.prevForm = previosForm;
             this.player = player;
+            
+
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -24,19 +33,64 @@ namespace WindowsFormsApp5.Forms
             this.Close();
         }
 
+
+
+
+
         private void button2_Click(object sender, EventArgs e)
         {
-            this.player.setNewWeapon(new Weapon("Шипаста булава", 100, 25));
+            if (listBox1.SelectedIndex == -1)
+                return;
+
+            Item selectedItem = shopItems[listBox1.SelectedIndex];
+
+            if (player.getMoney() >= selectedItem.getPrice())
+            {
+                player.setMoney(player.getMoney() - selectedItem.getPrice());
+
+                if (selectedItem is Weapon)
+                {
+                    player.setNewWeapon((Weapon)selectedItem);
+                }
+                else if (selectedItem is Armor)
+                {
+                    player.setNewArmor((Armor)selectedItem);
+                }
+
+                MessageBox.Show("Предмет куплено!");
+            }
+            else
+            {
+                MessageBox.Show("Недостатньо грошей!");
+            }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void GenerateShop()
         {
-            this.player.setNewWeapon(new Weapon("Світоносний Ленс", 100, 25));
+            bool weaponShop = random.Next(2) == 0;
+
+            if (weaponShop)
+            {
+                WeaponGenerator generator = new WeaponGenerator();
+
+                foreach (Weapon weapon in generator.CreateMany(5))
+                {
+                    shopItems.Add(weapon);
+                    listBox1.Items.Add(weapon.getName());
+                }
+            }
+            else
+            {
+                ArmorGenerator generator = new ArmorGenerator();
+
+                foreach (Armor armor in generator.CreateMany(5))
+                {
+                    shopItems.Add(armor);
+                    listBox1.Items.Add(armor.getName());
+                }
+            }
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.player.setNewWeapon(new Weapon("Легендарний бродакс", 100, 25));
-        }
+
     }
 }

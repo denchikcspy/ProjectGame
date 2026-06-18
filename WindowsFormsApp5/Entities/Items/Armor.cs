@@ -15,5 +15,7 @@ namespace WindowsFormsApp5.Entities.Items
         }
 
         public int getDefence() => value;
+
+        
     }
 }

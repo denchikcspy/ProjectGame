@@ -51,10 +51,12 @@ namespace WindowsFormsApp5.Forms
                 if (selectedItem is Weapon)
                 {
                     player.setNewWeapon((Weapon)selectedItem);
+                    prevForm.updateWeaponNameLabel();
                 }
                 else if (selectedItem is Armor)
                 {
                     player.setNewArmor((Armor)selectedItem);
+                    prevForm.updateArmorNameLabel();
                 }
 
                 MessageBox.Show("Предмет куплено!");

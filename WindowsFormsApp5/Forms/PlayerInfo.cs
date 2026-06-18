@@ -12,6 +12,7 @@ namespace WindowsFormsApp5.Forms
             InitializeComponent();
             player = new Player("Денис");
             this.label2.Text = player.CurrentWeapon.getName();
+            this.label3.Text = player.CurrentArmor.getName();
             this.label1.Text = player.getName();
         }
 

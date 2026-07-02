@@ -153,5 +153,10 @@ namespace WindowsFormsApp5.Forms
                 return false;
             }
         }
+
+        private void Shop_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

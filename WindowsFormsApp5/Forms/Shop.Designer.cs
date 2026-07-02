@@ -105,6 +105,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Shop";
             this.Text = "Shop";
+            this.Load += new System.EventHandler(this.Shop_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

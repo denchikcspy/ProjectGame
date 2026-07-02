@@ -1,14 +1,15 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace WindowsFormsApp5.Utils
 {
     public class ProgressBarValueHelper
     {
         int min = 0;
-        int max = 0;
-        int current = 0;
+        int max = 100;
+        int current = 100;
 
-        public ProgressBarValueHelper(int max, int min = 0)
+        public ProgressBarValueHelper(int max, int min=0)
         {
             this.min = min;
             this.max = this.current = max;
@@ -17,7 +18,7 @@ namespace WindowsFormsApp5.Utils
         public int getMin() => min;
         public int getMax() => max;
         public int getCurrent() => current;
-
+        
         public void increase(int value)
         {
             if (this.current + value > this.max)
@@ -42,5 +43,23 @@ namespace WindowsFormsApp5.Utils
                 return true;
             }
         }
+
+        public void setCurrent(int value)
+        {
+            if (value < min)
+                current = min;
+            else if (value > max)
+                current = max;
+            else
+                current = value;
+        }
+        public void increaseMax(int value)
+        {
+            max += value;
+            current += value;
+        }
+
+
     }
 }
+

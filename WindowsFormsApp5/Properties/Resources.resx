@@ -118,5 +118,157 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  
+  <data name="EnemyDamaged" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EnemyDamaged.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnemyDestroyed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EnemyDestroyed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnemyIdle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EnemyIdle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnemyNormalAttack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EnemyNormalAttack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnemyRepair" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EnemyRepair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EnemyStrongAttack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EnemyStrongAttack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TigerDamaged" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayerDamaged.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TigerDestroyed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayerDestroyed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TigerIdle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayerIdle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TigerNormalAttack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayerNormalAttack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TigerRepair" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayerRepair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TigerStrongAttack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayerStrongAttack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sherman" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sherman.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T34-85" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\T34-85.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tiger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tiger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tiger1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tiger1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T34-85Idle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\T34-85Idle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T34-85NormalAttack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\T34-85NormalAttack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T34-85StrongAttack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\T34-85StrongAttack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T34-85Repair" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\T34-85Repair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T34-85Damaged" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\T34-85Damaged.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T34-85Destroyed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\T34-85Destroyes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShermanIdle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShermanIdle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShermanNormalAttack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShermanNormalAttack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShermanRepair" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShermanRepair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShermanDamaged" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShermanDamaged.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShermanDestroyed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShermanDestroyed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShermanStrongAttack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShermanStrongAttack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MG34" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MG34.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MG42" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MG42.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hotchkiss M1929" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hotchkiss M1929.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Besa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Besa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KwK 30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KwK 30.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ВЯ23" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ВЯ23.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BoforsL60" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BoforsL60.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="20К" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\20К.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KwK 38" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KwK 38.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="M2HBBrowning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\M2HBBrowning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DHK" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DHK.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Oerlikon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Oerlikon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="M6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\M6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Додатковий бронекорпус" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Додатковий бронекорпус.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Посилена маска гармати" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Посилена маска гармати.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Броня командирської башточки" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Броня командирської башточки.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Композитна бортова броня" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Композитна бортова броня.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Посилені бортові екрани" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Посилені бортові екрани.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Приварена верхня бронеплита" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Приварена верхня бронеплита.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Додаткова баштова броня" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Додаткова баштова броня.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Посилений нижній лобовий лист" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Посилений нижній лобовий лист.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Комплект протикумулятивних екранів" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Комплект протикумулятивних екранів.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Навісна лобова броня" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Навісна лобова броня.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

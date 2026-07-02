@@ -13,14 +13,12 @@ namespace WindowsFormsApp5.Entities.Items
         protected string name;
         protected int price;
         protected string description;
-        protected int value;
 
-        public Item(string name, int price, int value, string description = "")
+        public Item(string name, int price, string description = "")
         {
             this.id = autoInc++;
             this.name = name;
             this.price = price;
-            this.value = value;
             this.description = description;
         }
 

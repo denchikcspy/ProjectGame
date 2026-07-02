@@ -1,6 +1,6 @@
-﻿using System;
+﻿using WindowsFormsApp5.Battle;
+using WindowsFormsApp5.Entities.Items;
 using WindowsFormsApp5.Utils;
-
 
 namespace WindowsFormsApp5.Entities
 {
@@ -8,22 +8,95 @@ namespace WindowsFormsApp5.Entities
     {
         private int rewardGold;
         private int rewardXP;
+        
 
-        private int damage;
-        private int defence;
-
-        public Enemy(string name, int level) : base(name, level)
+        public Enemy(
+            string name,
+            int level,
+            ProgressBarValueHelper hp,
+            ProgressBarValueHelper mp,
+            int endurance,
+            int agility,
+            int intelligence,
+            Weapon currentWeapon,
+            Armor currentArmor,
+            BattleSprites battleSprites
+        )
+        : base(
+            name,
+            level,
+            hp,
+            mp,
+            endurance,
+            agility,
+            intelligence,
+            currentWeapon,
+            currentArmor,
+            battleSprites
+        )
         {
-            this.rewardGold = 50 * level + CustomRandomizer.getRandomNumberInRange(-20, 20);
-            this.rewardXP = 50 * level + CustomRandomizer.getRandomNumberInRange(-10, 20);
-            this.damage = 20 * level + CustomRandomizer.getRandomNumberInRange(-5, 30);
-            this.defence = 20 * level + CustomRandomizer.getRandomNumberInRange(-5, 30);
-            this.HP = new ProgressBarValueHelper(400 * level + CustomRandomizer.getRandomNumberInRange(-50, 100));
+            rewardGold = 50 * level + CustomRandomizer.getRandomNumberInRange(-20, 20);
+            rewardXP = 50 * level + CustomRandomizer.getRandomNumberInRange(-10, 20);
         }
 
-        public int getRewardGold() => this.rewardGold;
-        public int getRewardXP() => this.rewardXP;
-        public int getDamage() => this.damage;
-        public int getDefence() => this.defence;
+        //==========================
+        // Нагорода
+        //==========================
+
+        public int getRewardGold() => rewardGold;
+        public int getRewardXP() => rewardXP;
+
+        public void setRewardGold(int value) => rewardGold = value;
+        public void setRewardXP(int value) => rewardXP = value;
+
+        //==========================
+        // AI ворога
+        //==========================
+
+        public BattleActionResult DecideAction(Player player)
+        {
+            BattleActionResult result;
+
+            // HP менше 30% -> ремонт
+            if ((double)getCurrentHP() / getMaxHP() <= 0.3 && CanRepair())
+            {
+                result = Repair();
+                result.LogText = $"{getName()} ремонтує танк.";
+                return result;
+            }
+
+            // MP майже закінчилась -> відпочинок
+            if (getCurrentMP() < NORMAL_ATTACK_MP_COST)
+            {
+                result = Rest();
+                return result;
+            }
+
+            int action = CustomRandomizer.getRandomNumberInRange(1, 100);
+
+            // 45% шанс сильного пострілу
+            if (action <= 45 && CanUseStrongAttack())
+            {
+                result = UseStrongAttack(player);
+                return result;
+            }
+
+            // 35% шанс кулемета
+            if (action <= 80 && CanUseNormalAttack())
+            {
+                result = UseNormalAttack(player);
+                return result;
+            }
+
+            // Якщо не може атакувати
+            if (CanRepair())
+            {
+               result = Repair();
+               return result;
+            }
+
+            result = Rest();
+            return result;
+        }
     }
 }

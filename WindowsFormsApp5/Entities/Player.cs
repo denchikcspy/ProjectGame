@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
+using WindowsFormsApp5.Battle;
 using WindowsFormsApp5.Entities.Items;
 using WindowsFormsApp5.Utils;
 
@@ -11,64 +8,164 @@ namespace WindowsFormsApp5.Entities
 {
     public class Player : Character
     {
-        private int LevelCup = 1000;
-        private int Experience = 0;
-
-        private int Strength = 20;
-        private int Endurance = 20;
-        private int Agility = 20;
-        private int Intelligence = 20;
-        private int CriticalChance = 0;
-
-        private int Money = 350; //Щоб купити хочаб щось у магазині
-        public ProgressBarValueHelper MP;
+        private int LevelCup = 25;
+        private int Experience;
+        private int Money;
+        
+        
 
 
-        public Weapon CurrentWeapon {  get; protected set; }
-        public Armor CurrentArmor { get; protected set; }
+        public Player(
+    string name,
+    int money,
+    ProgressBarValueHelper health,
+    ProgressBarValueHelper mp,
+    Weapon startWeapon,
+    Armor startArmor,
+    BattleSprites battleSprites
 
-        public Player(string name) : base(name, 1)
+
+) : base(name, 1, health, mp, 20, 15, 20, startWeapon, startArmor, battleSprites)
         {
-            CriticalChance = (int)Math.Ceiling(Agility * 0.5);
-            this.HP = new ProgressBarValueHelper(Endurance * 10);
-            this.MP = new ProgressBarValueHelper(Intelligence * 5);
+            this.Money = money;
+            this.HP = health;          // поле з Character
+            this.MP = mp;              // поле MP гравця
+            this.CurrentWeapon = startWeapon;
+            this.CurrentArmor = startArmor;
 
-            this.CurrentWeapon = new Weapon("Дерев'яний меч", 10, 2);
-            this.CurrentArmor = new Armor("Діряві штани", 1, 2);
+            this.AdditionalWeapon = null;
+            this.AdditionalArmor = null;
+            
+
+            // базові характеристики
+            this.Endurance = 20;
+            this.Agility = 15;
+            this.Intelligence = 20;
+            this.CriticalChance = (int)Math.Ceiling(Agility * 0.5);
         }
 
-        public void setNewWeapon(Weapon newWeapon)
+
+        public int getMoney() => Money;
+        public int getExperience() => Experience;
+        public int getLevelCup() => LevelCup;
+
+        
+        public void setMoney(int money) => Money = money;
+        public void setExperience(int experience) => Experience = experience;
+        public void setLevelCup(int levelCup) => LevelCup = levelCup;
+
+        
+        public void addMoney(int value)
         {
-            this.CurrentWeapon = newWeapon;
+            Money += value;
+        }
+
+
+
+
+        public void addExperience(int value)
+        {
+            Experience += value;
+            LevelUp();
+        }
+        public void LevelUp()
+        {
+            
+            while (this.Experience > this.LevelCup)
+            {
+                Experience -= LevelCup;
+
+                level++;
+
+                LevelCup = (int)(LevelCup * 1.3);
+
+                Endurance += 3;
+                Agility += 2;
+                Intelligence += 2;
+
+                CriticalChance = (int)Math.Ceiling(Agility * 0.5);
+
+                HP = new ProgressBarValueHelper(HP.getMax() + 30);
+                MP = new ProgressBarValueHelper(MP.getMax() + 15);
+
+                MessageBox.Show($"Нічого собі!!\nУ вас тепер {level} рівень! Вітаємо!", "Новий рівень", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        public void FullRepair()
+        {
+            HP.setCurrent(HP.getMax());
+        }
+        public void RestoreMP()
+        {
+            MP.setCurrent(MP.getMax());
+        }
+        public void DamagePlayer(int damage)
+        {
+            HP.decrease(damage);
+        }
+        public void HealPlayer(int heal)
+        {
+            HP.increase(heal);
+        }
+
+        public void AddRandomWeapon(Weapon weapon)
+        {
+            EquipWeaponFromShop(weapon);
+        }
+
+        public void AddRandomArmor(Armor armor)
+        {
+            CurrentArmor = armor;
+        }
+
+        public void IncreaseStat(int endurance, int agility, int intelligence)
+        {
+            Endurance += endurance;
+            Agility += agility;
+            Intelligence += intelligence;
+        }
+
+        public void LoseMoney(int value)
+        {
+            Money -= value;
+
+            if (Money < 0) {
+
+                Money = 0;
+
+            }
+               
+        }
+
+
+        public void setNewWeapon(Weapon weapon)
+        {
+            CurrentWeapon = weapon;
         }
 
         public void setNewArmor(Armor armor)
         {
-            this.CurrentArmor = armor;
+            CurrentArmor = armor;
         }
 
-        public Armor getArmor()
+        
+        public void EquipWeaponFromShop(Weapon weapon)
         {
-            return CurrentArmor;
+            if (weapon == null)
+                return;
+
+            
+            if (weapon.getCaliber() <= 30)
+            {
+                AdditionalWeapon = weapon;
+            }
+            else
+            {
+                CurrentWeapon = weapon;
+            }
         }
-
-
-        public Weapon getWeapon()
-        {
-            return CurrentWeapon;
-        }
-
-
-        public int getMoney()
-        {
-            return Money;
-        }
-        public void setMoney(int money)
-        {
-            this.Money = money;
-        }
-
+        
 
 
     }
-}
+    }

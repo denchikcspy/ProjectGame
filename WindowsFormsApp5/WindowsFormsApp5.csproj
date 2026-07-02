@@ -49,7 +49,6 @@
   <ItemGroup>
     <Compile Include="Battle\BattleActionResult.cs" />
     <Compile Include="Battle\BattleImageState.cs" />
-    <Compile Include="Battle\EnemyAction.cs" />
     <Compile Include="Entities\BattleSprites.cs" />
     <Compile Include="Entities\Character.cs" />
     <Compile Include="Entities\Items\Armor.cs" />
